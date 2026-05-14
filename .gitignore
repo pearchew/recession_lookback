@@ -181,3 +181,4 @@ cython_debug/
 .cursorindexingignore
 
 .csv
+notebooks/sp500_headlines_2008_2024_with_sentiment.csv
