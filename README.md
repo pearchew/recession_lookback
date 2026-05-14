@@ -18,7 +18,10 @@ This project stems from a curiosity of whether 'Hard' economic data (e.g., Yield
 ## Methodology
 * Hard Data (XGBoost): Extracted policy pillars (CPI, BAA10Y) and expectation pillars (T10Y3M, T10Y2Y). Handled the severe class imbalance of recessions using scale_pos_weight.
 * Soft Data (LightGBM & FinBERT): Extracted financial headlines from 2008-2024, utilized FinBERT for sentiment scoring, and applied a 30-day Exponential Moving Average (EMA) and a "Neutrality Ratio" to cut through the noise of objective financial journalism.
-* Calibration: Used Platt Scaling (Sigmoid Calibration) via CalibratedClassifierCV to convert raw model outputs into reliable, ensemble-ready probabilities for unseen data (2018-2024).
+* Conclusion Synthesis & Ensembling (Rank Averaging):
+    * TLCC between sentiment and unemployment rate as a gauge of leading/lagging movement of data
+    * Rank averaging to create an ensemble model: Individual model probabilities are converted into ordinal ranks, which are then averaged and normalized. This technique preserves the relative predictive signal of each source while remaining invariant to the "baseline" shifts caused by independent class-weighting strategies.
+
 ## Conclusion
 * Finding 1: The Crowd Anticipates the Data (Sentiment Leads)
     * Through Time Lagged Cross Correlation (TLCC) between the Neutrality Ratio (Soft Data) and Unemployment Rate MoM Difference (Hard Data), the project mathematically proves a peak correlation at a lag of +4.
