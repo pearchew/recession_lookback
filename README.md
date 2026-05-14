@@ -23,6 +23,11 @@ This project stems from a curiosity of whether 'Hard' economic data (e.g., Yield
     * Rank averaging to create an ensemble model: Individual model probabilities are converted into ordinal ranks, which are then averaged and normalized. This technique preserves the relative predictive signal of each source while remaining invariant to the "baseline" shifts caused by independent class-weighting strategies.
 
 ## Conclusion
+| Topic | Graph |
+| :--- | :--- |
+| **Ensemble/Macro XGB/Sentiment LightGBM** | ![Hard Model Graph](ensemble.png) |
+| **Sentiment v Unemployment TLCC** | ![Hard Model Graph](sentiment_v_unemployment.png) |
+
 * Finding 1: The Crowd Anticipates the Data (Sentiment Leads)
     * Through Time Lagged Cross Correlation (TLCC) between the Neutrality Ratio (Soft Data) and Unemployment Rate MoM Difference (Hard Data), the project mathematically proves a peak correlation at a lag of +4.
     * Macro Takeaway: Market sentiment and news headlines act as a 4-month leading indicator for physical employment output. The market "prices in" the economic reality before it hits the lagging hard data.
